@@ -3,12 +3,96 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
 import SkillBar from "../components/SkillBar.astro";
 import ContactForm from "../components/ContactForm.astro";
 import { getCollection } from "astro:content";
 
 const allProjects = await getCollection("projects");
 const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
+
+const experiences = [
+  {
+    title: "Google Student Ambassador",
+    company: "Google Developers",
+    period: "Sep 2025 - Present",
+    description:
+      "Selected as one of the few Google Campus Ambassadors for the Gemini Program out of 1000+ applicants across India. Turning Gemini AI from a name students know into a skill they master, inspiring creative and practical AI projects, and building a culture of innovation on campus.",
+    skills: [
+      "AI/ML",
+      "Community Building",
+      "Event Management",
+      "Public Speaking",
+      "Technical Mentoring",
+    ],
+    link: "https://developers.google.com/community/gdsc",
+  },
+  {
+    title: "Core Member",
+    company: "AlgoZenith KIIT Chapter",
+    period: "Sep 2025 - Present",
+    description:
+      "Contributing to competitive programming initiatives and conducting workshops on data structures and algorithms. Helping students improve their problem-solving skills and prepare for technical interviews.",
+    skills: [
+      "Competitive Programming",
+      "DSA",
+      "Mentorship",
+      "Workshop Facilitation",
+    ],
+    link: "https://www.algozenith.com/",
+  },
+  {
+    title: "Web Developer & Content Writer",
+    company: "USC.KIIT",
+    period: "Mar 2024 - Present",
+    description:
+      "Leading web development projects and creating technical content for the university's student community. Building modern web applications and writing articles on latest web technologies and best practices.",
+    skills: [
+      "Web Development",
+      "React.js",
+      "Content Writing",
+      "Technical Documentation",
+    ],
+    link: "https://www.kiit.ac.in/",
+  },
+  {
+    title: "Campus Leader",
+    company: "Code for GovTech (C4GT)",
+    period: "Sep 2024 - May 2025",
+    description:
+      "Leading campus initiatives for government technology projects and open-source contributions. Organizing workshops and hackathons focused on building digital public goods and contributing to India's Digital Public Infrastructure.",
+    skills: [
+      "Open Source",
+      "Community Management",
+      "Event Organization",
+      "Government Tech",
+    ],
+    link: "https://www.codeforgovtech.in/",
+  },
+  {
+    title: "Campus Ambassador",
+    company: "GirlScript Summer of Code Extended",
+    period: "Aug 2024 - Jan 2025",
+    description:
+      "Recognized as a Top 10 Campus Ambassador among all participants nationwide. Promoted open-source contributions on campus, organized workshops, mentored contributors, and facilitated student participation in India's largest open-source program.",
+    skills: [
+      "Open Source",
+      "Community Building",
+      "Mentorship",
+      "Event Management",
+    ],
+    link: "https://gssoc.girlscript.tech/",
+  },
+  {
+    title: "Campus Ambassador & Contributor",
+    company: "Winter Of Blockchain",
+    period: "Aug 2024 - Jan 2025",
+    description:
+      "Promoted blockchain technology and Web3 development on campus. Conducted workshops on blockchain fundamentals, smart contracts, and decentralized applications. Mentored students in blockchain development and crypto technologies.",
+    skills: ["Blockchain", "Web3", "Smart Contracts", "Community Building"],
+    link: "https://www.winterofblockchain.com/",
+  },
+];
 
 const programmingLanguages = [
   { name: "JavaScript", progress: 95 },
@@ -47,9 +131,30 @@ const frameworksTools = [
       </div>
     </section>
 
+    <section id="experience" class="section fade-in">
+      <div class="container">
+        <SectionHeader title="experience" number="02" />
+        <div class="experience-grid">
+          {
+            experiences.map((exp, index) => (
+              <ExperienceCard
+                title={exp.title}
+                company={exp.company}
+                period={exp.period}
+                description={exp.description}
+                skills={exp.skills}
+                link={exp.link}
+                index={index}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="section fade-in">
       <div class="container">
-        <SectionHeader title="projects" number="02" />
+        <SectionHeader title="projects" number="03" />
         <div class="projects-grid">
           {
             projects.map((project, index) => (
@@ -70,7 +175,7 @@ const frameworksTools = [
 
     <section id="skills" class="section fade-in">
       <div class="container">
-        <SectionHeader title="skills" number="03" />
+        <SectionHeader title="skills" number="04" />
         <div class="skills-grid">
           <div class="skill-category">
             <h3>Programming Languages</h3>
@@ -95,7 +200,7 @@ const frameworksTools = [
 
     <section id="setup" class="section fade-in">
       <div class="container">
-        <SectionHeader title="tools & setup" number="04" />
+        <SectionHeader title="tools & setup" number="05" />
         <div class="misc-grid">
           <div class="misc-item slide-up stagger-1">
             <span class="misc-number">01</span>
