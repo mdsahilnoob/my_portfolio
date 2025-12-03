@@ -601,6 +601,31 @@
     .nav-link {
       font-size: 15px;
     }
+    /* rotation in mobile devices */
+    .header .container {
+      transform: rotate(90deg);
+      transform-origin: center center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vh;
+      height: 100vw;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -50vh;
+      margin-top: -50vw;
+      text-align: left;
+    }
+
+    .name {
+      font-size: clamp(6.9rem, 15vw, 12rem);
+    }
+
+    .title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
 
     .contact {
       bottom: 30px;
