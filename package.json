@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.3"
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.15.3",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "lightningcss": "^1.30.2"
