@@ -7,6 +7,8 @@
   --hover-bg: #f5f5f5;
   --accent-color: #000000;
   --bg-color: #ffffff;
+  --background: #ffffff;
+  --background-rgb: 255, 255, 255;
 
   /* Typography */
   --font-family: 'Gowun Batang', serif;
@@ -32,6 +34,8 @@
   --hover-bg: #222222;
   --accent-color: #ffffff;
   --bg-color: #121212;
+  --background: #121212;
+  --background-rgb: 18, 18, 18;
 }
 
 @media (max-width: 768px) {
