@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://mdsahilnoob.github.io',
-  base: '/my_portfolio',
+  base: '/',
   output: 'static',
   compressHTML: true,
   build: {
