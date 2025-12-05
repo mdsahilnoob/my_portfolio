@@ -8,6 +8,7 @@ export const GET: APIRoute = async ({ site }) => {
   const projects = await getCollection('projects');
 
   // Static pages
+  
   const staticPages = [
     { url: '', priority: '1.0', changefreq: 'weekly' },
     { url: '#about', priority: '0.8', changefreq: 'monthly' },

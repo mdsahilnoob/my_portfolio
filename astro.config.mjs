@@ -1,13 +1,16 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://mdsahilnoob.github.io',
+  site: 'https://mdsahil.me',
   base: '/',
   output: 'static',
   compressHTML: true,
+
   build: {
     inlineStylesheets: 'auto',
   },
+
   vite: {
     build: {
       cssMinify: 'lightningcss',
@@ -18,4 +21,6 @@ export default defineConfig({
       },
     },
   },
+
+  integrations: [sitemap()],
 });
